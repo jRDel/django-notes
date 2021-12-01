@@ -1,0 +1,25 @@
+{% if notes_list %}
+    <ul>
+    {% for note in notes_list %}
+        <li><a href="{% url 'show_note' note.id %}">{{ note.title }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No notes are available.</p>
+{% endif %}
+
+<p>Create a new note below:</p>
+
+<form action = "{% url 'new_note' %}" method="post" id="content">
+    {% csrf_token %}
+    <!--<label> Enter the title: </label><br>
+    <input type="text" name="title"> <br>
+    <label> Enter the description: </label> <br>
+    <textarea name="description" rows="10" cols="70" form="content"></textarea>
+    -->
+    {{form}}
+    <input type="submit" value="Create Note">
+</form>
+
+

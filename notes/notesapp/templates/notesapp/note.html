@@ -1,0 +1,7 @@
+{% if note %}
+    <p><h1>{{ note.title }}</h1><br>
+        <p>{{ note.description }}</p>
+    </p>
+{% else %}
+    <p>Note is empty</p>
+{% endif %}
