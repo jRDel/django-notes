@@ -1,7 +1,22 @@
+<!doctype html>
+<head>
+    <title>All notes</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notesapp/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
 {% if note %}
     <p><h1>{{ note.title }}</h1><br>
         <p>{{ note.description }}</p>
     </p>
+    <form action = "{% url 'del_note' note.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
 {% else %}
     <p>Note is empty</p>
 {% endif %}
+</body>
+</html>
+

@@ -1,3 +1,17 @@
+<!doctype html>
+<head>
+    <title>All notes</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notesapp/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div align="right">
+    <p><i class="fa fa-check-circle"></i></p>
+</div>
+<div align="center">
+    <h1>All notes</h1>
+</div>
+<body>
 {% if notes_list %}
     <ul>
     {% for note in notes_list %}
@@ -9,17 +23,17 @@
     <p>No notes are available.</p>
 {% endif %}
 
+
+
 <p>Create a new note below:</p>
 
 <form action = "{% url 'new_note' %}" method="post" id="content">
     {% csrf_token %}
-    <!--<label> Enter the title: </label><br>
+    <label> Enter the title: </label><br>
     <input type="text" name="title"> <br>
     <label> Enter the description: </label> <br>
     <textarea name="description" rows="10" cols="70" form="content"></textarea>
-    -->
-    {{form}}
     <input type="submit" value="Create Note">
 </form>
-
-
+</body>
+</html>

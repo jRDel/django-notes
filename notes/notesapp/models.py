@@ -4,7 +4,7 @@ from django import forms
 
 class Note(models.Model):
     title = models.CharField(max_length=100)
-    description = forms.CharField(widget=forms.TextInput(attrs={'size': '40'}))
+    description = models.CharField(max_length=254, blank=True)
     def __str__(self):
         return self.title
     def get_description(self):

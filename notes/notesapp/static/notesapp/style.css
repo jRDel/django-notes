@@ -1,0 +1,9 @@
+ul a {
+    color: black;
+}
+
+body{
+        background-color: burlywood;
+        background: white url("images/pikachu.png") no-repeat;
+        background-size: 100% 300%
+}
